@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:700&display=swap');
+:root {
+    --white-color: #fff;
+    --text-color: #ee6352;
+    --background-color: #ddd;
+    --gradient-color: linear-gradient(45deg, #845ec2, #d65db1, #ff6f91, #ff9671, #ffc75f, #f9f871);
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--background-color);
+    text-shadow: 0 .5rem 1rem transparent;
+    background-image: var(--gradient-color);
+    /*  Here I want to transition bg Image , but I can't so Background size is much bigger */
+    background-size: 400%;
+    animation: bg-animation 10s infinite;
+}
+
+.content {
+    background: var(--white-color);
+    width: 70vw;
+    padding: 3em;
+    box-shadow: 0 1rem 2rem rgbs(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.content-title {
+    margin: 0 0 0 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3rem;
+    line-height: 1;
+    margin: 0;
+    background-image: var(--gradient-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 5rem;
+    animation: bg-animation 10s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
